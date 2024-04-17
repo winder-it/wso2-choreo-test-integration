@@ -2,10 +2,12 @@
 <api context="/HelloWorld" name="HelloWorld" xmlns="http://ws.apache.org/ns/synapse">
     <resource methods="GET">
         <inSequence>
+            <log description="API invoking" level="full"/>
             <payloadFactory media-type="json">
                 <format>{"Hello":"World"}</format>
                 <args/>
             </payloadFactory>
+            <log description="API invoked" level="full"/>
             <respond/>
         </inSequence>
         <outSequence/>
